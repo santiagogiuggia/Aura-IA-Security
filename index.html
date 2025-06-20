@@ -27,10 +27,20 @@
         .btn-primary {
             background-color: #3182ce; /* Blue */
             color: white;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
         .btn-primary:hover {
             background-color: #2b6cb0; /* Darker blue */
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background-color: #63b3ed; /* Lighter blue */
+            color: white;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .btn-secondary:hover {
+            background-color: #4299e1; /* Even lighter blue */
+            transform: translateY(-2px);
         }
         .icon-feature {
             color: #4299e1; /* Light blue for icons */
@@ -48,6 +58,11 @@
             .text-5xl-responsive {
                 font-size: 4rem; /* Even larger for desktops (64px) */
             }
+        }
+        /* Card hover effect */
+        .card-hover-effect:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
     </style>
 </head>
@@ -80,9 +95,14 @@
                     Transforma la seguridad de tu propiedad con nuestra innovadora solución de guardia remota.
                     Tecnología de punta, IA y drones para tu tranquilidad y ahorro significativo.
                 </p>
-                <a href="#contacto" class="btn-primary py-3 px-8 text-lg md:text-xl font-semibold rounded-full shadow-lg hover:scale-105 transform transition duration-300 ease-in-out inline-block">
-                    Solicita una Demostración
-                </a>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#contacto" class="btn-primary py-3 px-8 text-lg md:text-xl font-semibold rounded-full shadow-lg hover:scale-105 transform transition duration-300 ease-in-out inline-block">
+                        Solicita una Demostración
+                    </a>
+                    <a href="#app-movil" class="btn-secondary py-3 px-8 text-lg md:text-xl font-semibold rounded-full shadow-lg hover:scale-105 transform transition duration-300 ease-in-out inline-block">
+                        Conoce la App
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -90,42 +110,42 @@
         <section id="servicios" class="py-12 md:py-16 px-4 bg-white rounded-xl shadow-md mx-auto my-8 md:my-12 max-w-6xl">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-gray-800">Nuestros Servicios Clave</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-                <div class="text-center p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                <div class="text-center p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover-effect">
                     <div class="icon-feature text-4xl md:text-5xl mb-4">
                         <i class="fas fa-video mx-auto"></i>
                     </div>
                     <h3 class="text-xl md:text-2xl font-semibold mb-3 text-gray-700">Monitoreo 24/7 con IA Avanzada</h3>
                     <p class="text-base text-gray-600">Cámaras Hikvision/Dahua con analíticas inteligentes: detección de intrusos, merodeo, objetos sospechosos y más. Vigilancia proactiva para edificios y perímetros de barrios.</p>
                 </div>
-                <div class="text-center p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                <div class="text-center p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover-effect">
                     <div class="icon-feature text-4xl md:text-5xl mb-4">
-                        <i class="fas fa-shield-alt mx-auto"></i>
+                        <i class="fas fa-id-card-alt mx-auto"></i> <!-- Changed icon to better represent DNI/Access Control -->
                     </div>
                     <h3 class="text-xl md:text-2xl font-semibold mb-3 text-gray-700">Control de Acceso Remoto Inteligente</h3>
                     <p class="text-base text-gray-600">Gestión de ingresos y egresos para visitas, deliveries y residentes. Intercomunicadores externos y pantallas interactivas internas para una comunicación fluida y segura con escáner de DNI y LPR.</p>
                 </div>
-                <div class="text-center p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                <div class="text-center p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover-effect">
                     <div class="icon-feature text-4xl md:text-5xl mb-4">
                         <i class="fas fa-drone mx-auto"></i>
                     </div>
                     <h3 class="text-xl md:text-2xl font-semibold mb-3 text-gray-700">Vigilancia Perimetral con Drones</h3>
                     <p class="text-base text-gray-600">Para barrios cerrados: rondas de seguridad con drones Dahua de alta tecnología, proporcionando vistas aéreas y detección de anomalías en perímetros extensos.</p>
                 </div>
-                <div class="text-center p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                <div class="text-center p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover-effect">
                     <div class="icon-feature text-4xl md:text-5xl mb-4">
                         <i class="fas fa-elevator mx-auto"></i>
                     </div>
                     <h3 class="text-xl md:text-2xl font-semibold mb-3 text-gray-700">Monitoreo y Control de Ascensores</h3>
                     <p class="text-base text-gray-600">Servicio exclusivo para edificios: visualización remota del estado y capacidad de reinicio a distancia en caso de bloqueo, con comunicación directa con residentes.</p>
                 </div>
-                <div class="text-center p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                <div class="text-center p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover-effect">
                     <div class="icon-feature text-4xl md:text-5xl mb-4">
-                        <i class="fas fa-file-alt mx-auto"></i>
+                        <i class="fas fa-chart-line mx-auto"></i> <!-- Changed icon to reflect reports/analytics -->
                     </div>
-                    <h3 class="text-xl md:text-2xl font-semibold mb-3 text-gray-700">Registros y Transparencia Total</h3>
-                    <p class="text-base text-gray-600">Acceso a reportes detallados de eventos, ingresos/egresos y actividad de seguridad para administradores y comisiones.</p>
+                    <h3 class="text-xl md:text-2xl font-semibold mb-3 text-gray-700">Reportes y Transparencia Total</h3>
+                    <p class="text-base text-gray-600">Acceso a reportes detallados de eventos, ingresos/egresos y actividad de seguridad para administradores y comisiones a través de nuestro portal web y App.</p>
                 </div>
-                <div class="text-center p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                <div class="text-center p-6 bg-gray-50 rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover-effect">
                     <div class="icon-feature text-4xl md:text-5xl mb-4">
                         <i class="fas fa-headset mx-auto"></i>
                     </div>
@@ -155,13 +175,15 @@
                         <li><span class="font-semibold text-blue-600">Historial y Transparencia:</span> Acceso a registros detallados de ingresos y egresos de personas y vehículos (LPR).</li>
                         <li><span class="font-semibold text-blue-600">Portal de Administradores:</span> Accede a reportes detallados, estadísticas y gestiona pagos de forma segura.</li>
                     </ul>
-                    <a href="URL_DE_TU_APP_REAL" target="_blank" class="btn-primary py-2 px-6 mt-6 text-base font-semibold rounded-full shadow-lg hover:scale-105 transform transition duration-300 ease-in-out inline-block">
-                        Descarga la App (Próximamente)
-                    </a>
-                    <!-- Este botón simula el acceso al portal de administradores -->
-                    <a href="javascript:void(0);" onclick="alert('Esta funcionalidad te llevaría a un portal seguro para administradores donde podrás gestionar pagos y ver reportes detallados de la guardia y actividad del edificio/barrio.');" class="bg-gray-700 hover:bg-gray-900 text-white py-2 px-6 mt-6 ml-4 text-base font-semibold rounded-full shadow-lg hover:scale-105 transform transition duration-300 ease-in-out inline-block">
-                        Acceso para Administradores
-                    </a>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-6">
+                        <a href="URL_DE_TU_APP_REAL" target="_blank" class="btn-primary py-2 px-6 text-base font-semibold rounded-full shadow-lg">
+                            Descarga la App (Próximamente)
+                        </a>
+                        <!-- Botón para el acceso al portal de administradores -->
+                        <a href="javascript:void(0);" onclick="alert('Esta funcionalidad te llevaría a un portal seguro para administradores donde podrás gestionar pagos y ver reportes detallados de la guardia y actividad del edificio/barrio.');" class="btn-secondary py-2 px-6 text-base font-semibold rounded-full shadow-lg">
+                            Acceso para Administradores
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -195,32 +217,32 @@
         <section id="beneficios" class="py-12 md:py-16 px-4 bg-gray-50 rounded-xl shadow-md mx-auto my-8 md:my-12 max-w-6xl">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-gray-800">Ventajas Insuperables para tu Propiedad</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                <div class="p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover-effect">
                     <div class="icon-feature text-4xl mb-4"><i class="fas fa-money-bill-wave"></i></div>
                     <h3 class="text-xl md:text-2xl font-semibold mb-2 text-gray-700">Reducción de Costos Significativa</h3>
                     <p class="text-base text-gray-600">Ahorra hasta el 50% en gastos de seguridad en consorcios y reduce considerablemente el costo de personal en barrios cerrados.</p>
                 </div>
-                <div class="p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                <div class="p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover-effect">
                     <div class="icon-feature text-4xl mb-4"><i class="fas fa-chart-line"></i></div>
                     <h3 class="text-xl md:text-2xl font-semibold mb-2 text-gray-700">Mayor Eficiencia Operativa</h3>
                     <p class="text-base text-gray-600">Un modelo centralizado que optimiza recursos, brindando atención constante y proactiva sin los problemas del personal físico.</p>
                 </div>
-                <div class="p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                <div class="p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover-effect">
                     <div class="icon-feature text-4xl mb-4"><i class="fas fa-user-check"></i></div>
                     <h3 class="text-xl md:text-2xl font-semibold mb-2 text-gray-700">Vigilancia Siempre Alerta</h3>
                     <p class="text-base text-gray-600">Olvídate del personal que se duerme: nuestros sistemas y guardias remotos están siempre activos y supervisados.</p>
                 </div>
-                <div class="p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                <div class="p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover-effect">
                     <div class="icon-feature text-4xl mb-4"><i class="fas fa-brain"></i></div>
                     <h3 class="text-xl md:text-2xl font-semibold mb-2 text-gray-700">Seguridad Proactiva con IA</h3>
                     <p class="text-base text-gray-600">La inteligencia artificial detecta patrones y eventos sospechosos antes de que se conviertan en un problema, enviando alertas precisas.</p>
                 </div>
-                <div class="p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                <div class="p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover-effect">
                     <div class="icon-feature text-4xl mb-4"><i class="fas fa-map-marked-alt"></i></div>
                     <h3 class="text-xl md:text-2xl font-semibold mb-2 text-gray-700">Monitoreo Perimetral Avanzado</h3>
                     <p class="text-base text-gray-600">Ideal para barrios cerrados: cobertura total de perímetros extensos y vigilancia aérea con drones para una seguridad sin puntos ciegos.</p>
                 </div>
-                <div class="p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                <div class="p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover-effect">
                     <div class="icon-feature text-4xl mb-4"><i class="fas fa-file-alt"></i></div>
                     <h3 class="text-xl md:text-2xl font-semibold mb-2 text-gray-700">Transparencia y Control Total</h3>
                     <p class="text-base text-gray-600">Acceso a registros y reportes detallados de eventos y actividad para los administradores.</p>
