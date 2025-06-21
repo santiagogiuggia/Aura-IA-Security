@@ -6,7 +6,7 @@
     <title>Aura IA Security - Seguridad Remota Inteligente para Consorcios y Barrios Cerrados</title>
     <!-- Meta Tags para SEO -->
     <meta name="description" content="Aura IA Security ofrece soluciones innovadoras de seguridad remota con IA y drones para consorcios y barrios cerrados en Córdoba. Reduce costos y aumenta la protección con tecnología de vanguardia y aplicación móvil integral.">
-    <meta name="keywords" content="seguridad remota, IA, inteligencia artificial, drones, videovigilancia, control de acceso, consorcios, edificios, barrios cerrados, countries, seguridad perimetral, monitoreo 24/7, Córdoba, aplicación móvil, gestión de visitas, gestión de encomiendas, pagos online, reportes de seguridad">
+    <meta name="keywords" content="seguridad remota, IA, inteligencia artificial, drones, videovigilancia, control de acceso, consorcios, edificios, barrios cerrados, countries, seguridad perimetral, monitoreo 24/7, Córdoba, aplicación móvil, gestión de visitas, gestión de encomiendas, pagos online, reportes de seguridad, testimonios, FAQ">
     <meta name="author" content="Aura IA Security">
 
     <!-- Tailwind CSS CDN -->
@@ -95,6 +95,27 @@
             background: rgba(0, 0, 0, 0.6); /* Oscurece el video */
             z-index: 0;
         }
+        /* Estilos para el FAQ */
+        .faq-item {
+            border-bottom: 1px solid #e2e8f0; /* gray-200 */
+        }
+        .faq-question {
+            cursor: pointer;
+            padding: 1rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #2d3748; /* gray-800 */
+        }
+        .faq-answer {
+            padding-bottom: 1rem;
+            color: #4a5568; /* gray-700 */
+            display: none;
+        }
+        .faq-answer.active {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -109,14 +130,16 @@
                 <li><a href="#app-movil" class="hover:text-blue-400 transition duration-300 p-2 block md:inline">App Móvil</a></li>
                 <li><a href="#solucion" class="hover:text-blue-400 transition duration-300 p-2 block md:inline">Nuestra Solución</a></li>
                 <li><a href="#beneficios" class="hover:text-blue-400 transition duration-300 p-2 block md:inline">Beneficios</a></li>
+                <li><a href="#testimonios" class="hover:text-blue-400 transition duration-300 p-2 block md:inline">Testimonios</a></li>
+                <li><a href="#faq" class="hover:text-blue-400 transition duration-300 p-2 block md:inline">FAQ</a></li>
                 <li><a href="#contacto" class="hover:text-blue-400 transition duration-300 p-2 block md:inline">Contacto</a></li>
                 <li><a href="javascript:void(0);" onclick="alert('En un entorno real, esto te llevaría al portal de inicio de sesión de la aplicación para administradores.');" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-full text-base transition duration-300 ml-4 hidden md:inline-block">Acceso Administradores</a></li>
             </ul>
         </nav>
     </header>
-https://raw.githubusercontent.com/santiagogiuggia/Aura-IA-Security/main/assets/ingreso-edificio.jpg
+
     <main>
-        <!-- Hero Section con Video de Fondo Simulado -->
+        <!-- Hero Section con Video de Fondo Simulado y Contenido Resaltado -->
         <section class="hero-section text-white py-20 px-4 text-center rounded-b-xl shadow-xl relative overflow-hidden">
             <div class="hero-video-container">
                 <!-- Video de fondo simulado - Reemplazar con video real y formatos web (mp4, webm) -->
@@ -161,7 +184,7 @@ https://raw.githubusercontent.com/santiagogiuggia/Aura-IA-Security/main/assets/i
                         <i class="fas fa-id-card-alt mx-auto"></i>
                     </div>
                     <h3 class="text-xl md:text-2xl font-semibold mb-3 text-gray-700">Control de Acceso Remoto Inteligente</h3>
-                    <p class="text-base text-gray-600">Gestión de ingresos y egresos para visitas, deliveries y residentes. Intercomunicadores externos y pantallas interactivas internas para una comunicación fluida y segura con escáner de DNI y LPR.</p>
+                    <p class="text-base text-gray-600">Gestión de ingresos y egresos para visitas, deliveries y residentes. Intercomunicadores externos y pantallas interactivas internas para una comunicación fluida y segura con **escáner de DNI y LPR**.</p>
                 </div>
                 <div class="text-center p-6 bg-gray-50 rounded-xl shadow-sm transition duration-300 card-hover-effect">
                     <div class="icon-feature text-4xl md:text-5xl mb-4">
@@ -234,7 +257,7 @@ https://raw.githubusercontent.com/santiagogiuggia/Aura-IA-Security/main/assets/i
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-gray-800">Aura IA Security: La Guardia del Futuro</h2>
             <div class="flex flex-col md:flex-row items-center gap-8 md:gap-10">
                 <div class="md:w-1/2">
-                    <img src="https://raw.githubusercontent.com/santiagogiuggia/Aura-IA-Security/main/assets/ingreso-edificio.jpg" alt="Ilustración del sistema de seguridad remota con IA de Aura IA Security" class="rounded-xl shadow-lg w-full h-auto object-cover">
+                    <img src="https://raw.githubusercontent.com/santiagogiuggia/Aura-IA-Security/main/images/aura-ia-system.png" alt="Ilustración del sistema de seguridad remota con IA de Aura IA Security" class="rounded-xl shadow-lg w-full h-auto object-cover">
                 </div>
                 <div class="md:w-1/2">
                     <h3 class="text-2xl md:text-3xl font-semibold mb-4 text-gray-700">Innovación y Eficiencia en Cada Detalle</h3>
@@ -254,39 +277,68 @@ https://raw.githubusercontent.com/santiagogiuggia/Aura-IA-Security/main/assets/i
             </div>
         </section>
 
-        <!-- Benefits Section -->
-        <section id="beneficios" class="py-12 md:py-16 px-4 bg-gray-50 rounded-xl shadow-md mx-auto my-8 md:my-12 max-w-6xl">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-gray-800">Ventajas Insuperables para tu Propiedad</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="p-6 bg-white rounded-xl shadow-sm transition duration-300 card-hover-effect">
-                    <div class="icon-feature text-4xl mb-4"><i class="fas fa-money-bill-wave"></i></div>
-                    <h3 class="text-xl md:text-2xl font-semibold mb-2 text-gray-700">Reducción de Costos Significativa</h3>
-                    <p class="text-base text-gray-600">Ahorra hasta el 50% en gastos de seguridad en consorcios y reduce considerablemente el costo de personal en barrios cerrados.</p>
+        <!-- Testimonials Section -->
+        <section id="testimonios" class="py-12 md:py-16 px-4 bg-gray-100 rounded-xl shadow-md mx-auto my-8 md:my-12 max-w-6xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-gray-800">Lo que Dicen Nuestros Clientes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <p class="text-gray-700 italic mb-4">"Desde que implementamos Aura IA Security, nuestras expensas se redujeron en un 45% y la seguridad en el edificio es notablemente superior. La app es súper útil para las visitas."</p>
+                    <p class="font-semibold text-gray-800">- María L., Administradora de Consorcios</p>
                 </div>
-                <div class="p-6 bg-white rounded-xl shadow-sm transition duration-300 card-hover-effect">
-                    <div class="icon-feature text-4xl mb-4"><i class="fas fa-chart-line"></i></div>
-                    <h3 class="text-xl md:text-2xl font-semibold mb-2 text-gray-700">Mayor Eficiencia Operativa</h3>
-                    <p class="text-base text-gray-600">Un modelo centralizado que optimiza recursos, brindando atención constante y proactiva sin los problemas del personal físico.</p>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <p class="text-gray-700 italic mb-4">"La vigilancia con drones en el perímetro nos dio una tranquilidad que antes no teníamos. La capacidad de detectar intrusos de forma proactiva es impresionante."</p>
+                    <p class="font-semibold text-gray-800">- Juan P., Presidente Comisión Directiva de Country</p>
                 </div>
-                <div class="p-6 bg-white rounded-xl shadow-sm transition duration-300 card-hover-effect">
-                    <div class="icon-feature text-4xl mb-4"><i class="fas fa-user-check"></i></div>
-                    <h3 class="text-xl md:text-2xl font-semibold mb-2 text-gray-700">Vigilancia Siempre Alerta</h3>
-                    <p class="text-base text-gray-600">Olvídate del personal que se duerme: nuestros sistemas y guardias remotos están siempre activos y supervisados.</p>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <p class="text-gray-700 italic mb-4">"La gestión de visitas y personal de servicio a través de la aplicación es un cambio de juego. Todo es más rápido, seguro y tenemos un registro completo."</p>
+                    <p class="font-semibold text-gray-800">- Ana G., Residente de Barrio Cerrado</p>
                 </div>
-                <div class="p-6 bg-white rounded-xl shadow-sm transition duration-300 card-hover-effect">
-                    <div class="icon-feature text-4xl mb-4"><i class="fas fa-brain"></i></div>
-                    <h3 class="text-xl md:text-2xl font-semibold mb-2 text-gray-700">Seguridad Proactiva con IA</h3>
-                    <p class="text-base text-gray-600">La inteligencia artificial detecta patrones y eventos sospechosos antes de que se conviertan en un problema, enviando alertas precisas.</p>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <p class="text-gray-700 italic mb-4">"El soporte es excelente y la integración de las cámaras LPR en el acceso vehicular nos dio un nivel de control que antes era impensable."</p>
+                    <p class="font-semibold text-gray-800">- Carlos R., Administrador de Edificio Corporativo</p>
                 </div>
-                <div class="p-6 bg-white rounded-xl shadow-sm transition duration-300 card-hover-effect">
-                    <div class="icon-feature text-4xl mb-4"><i class="fas fa-map-marked-alt"></i></div>
-                    <h3 class="text-xl md:text-2xl font-semibold mb-2 text-gray-700">Monitoreo Perimetral Avanzado</h3>
-                    <p class="text-base text-gray-600">Ideal para barrios cerrados: cobertura total de perímetros extensos y vigilancia aérea con drones para una seguridad sin puntos ciegos.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-12 md:py-16 px-4 bg-white rounded-xl shadow-md mx-auto my-8 md:my-12 max-w-6xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-gray-800">Preguntas Frecuentes</h2>
+            <div class="space-y-4">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        ¿Cómo se compara el costo de Aura IA Security con una guardia tradicional?
+                        <i class="fas fa-chevron-down text-blue-500 transition-transform duration-300"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Nuestro servicio puede significar un ahorro de hasta el 50% en las expensas de seguridad para consorcios, y una reducción aún mayor en barrios cerrados al optimizar la cantidad de personal físico requerido, eliminando costos laborales como salarios, ART, ausentismo y licencias.
+                    </div>
                 </div>
-                <div class="p-6 bg-white rounded-xl shadow-sm transition duration-300 card-hover-effect">
-                    <div class="icon-feature text-4xl mb-4"><i class="fas fa-file-alt"></i></div>
-                    <h3 class="text-xl md:text-2xl font-semibold mb-3 text-gray-700">Transparencia y Control Total</h3>
-                    <p class="text-base text-gray-600">Acceso a registros y reportes detallados de eventos y actividad para los administradores.</p>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        ¿Es la seguridad remota realmente tan efectiva como una guardia física?
+                        <i class="fas fa-chevron-down text-blue-500 transition-transform duration-300"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Sí, en muchos aspectos es superior. Nuestra solución combina la inteligencia artificial para una detección proactiva y constante (sin fatiga humana), con la eficiencia de operadores remotos siempre alertas. Además, la integración con drones y LPR ofrece una cobertura y un registro que una guardia física no puede igualar, complementado con personal de respuesta en campo.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        ¿Qué sucede si hay un corte de luz o internet en mi propiedad?
+                        <i class="fas fa-chevron-down text-blue-500 transition-transform duration-300"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Nuestros sistemas están equipados con redundancia de conectividad (fibra óptica, 4G/5G, e incluso Starlink en barrios cerrados) y sistemas de alimentación ininterrumpida (UPS) de alta capacidad. Esto asegura que la comunicación y la vigilancia se mantengan activas en todo momento. Nuestro equipo técnico monitorea la salud de la conexión 24/7.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        ¿Cómo funciona la gestión de visitas a través de la aplicación?
+                        <i class="fas fa-chevron-down text-blue-500 transition-transform duration-300"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Los residentes pueden precargar la información de sus visitas o personal de servicio directamente en la aplicación. Esto genera códigos QR o PINs que agilizan el ingreso. La guardia remota recibe esta información al instante y puede verificar la identidad y autorizar el acceso de forma rápida y segura, enviando notificaciones al residente.
+                    </div>
                 </div>
             </div>
         </section>
@@ -327,5 +379,37 @@ https://raw.githubusercontent.com/santiagogiuggia/Aura-IA-Security/main/assets/i
             <p class="mt-2 text-xs opacity-75">Los nombres de marcas y productos mencionados son propiedad de sus respectivos dueños.</p>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const icon = question.querySelector('i');
+
+                    // Cerrar todas las otras respuestas abiertas
+                    document.querySelectorAll('.faq-answer.active').forEach(openAnswer => {
+                        if (openAnswer !== answer) {
+                            openAnswer.classList.remove('active');
+                            openAnswer.style.maxHeight = null;
+                            openAnswer.previousElementSibling.querySelector('i').classList.replace('fa-chevron-up', 'fa-chevron-down');
+                        }
+                    });
+
+                    // Alternar la respuesta actual
+                    if (answer.classList.contains('active')) {
+                        answer.classList.remove('active');
+                        answer.style.maxHeight = null;
+                        icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+                    } else {
+                        answer.classList.add('active');
+                        answer.style.maxHeight = answer.scrollHeight + "px"; // Ajustar la altura para la animación
+                        icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
