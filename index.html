@@ -144,9 +144,9 @@
             <div class="hero-video-container">
                 <!-- Videos de fondo - el navegador elegirá el primero que pueda reproducir -->
                 <video autoplay loop muted playsinline class="hero-video">
-                    <source src=""https://raw.githubusercontent.com/santiagogiuggia/Aura-IA-Security/main/assets/Aura_IA_Security_Video_Script.mp4" type="video/mp4">
-                    <source src=""https://raw.githubusercontent.com/santiagogiuggia/Aura-IA-Security/main/assets/Video_Listo_Enlace_Disponible.mp4" type="video/mp4">
-                    <source src=""https://raw.githubusercontent.com/santiagogiuggia/Aura-IA-Security/main/assets/Video_Listo_con_Logo_Incorporado.mp4" type="video/mp4">
+                    <source src="assets/Aura_IA_Security_Video_Script.mp4" type="video/mp4">
+                    <source src="assets/Video_Listo_Enlace_Disponible.mp4" type="video/mp4">
+                    <source src="assets/Video_Listo_con_Logo_Incorporado.mp4" type="video/mp4">
                     Tu navegador no soporta el elemento de video.
                 </video>
                 <div class="video-overlay"></div>
@@ -225,7 +225,7 @@
             <div class="flex flex-col md:flex-row items-center gap-8 md:gap-10">
                 <div class="md:w-1/2">
                     <!-- Imagen de la pantalla interactiva REAL desde GitHub -->
-                    <img src="https://raw.githubusercontent.com/santiagogiuggia/Aura-IA-Security/main/assets/logo-aura.png" alt="Pantalla Interactiva de Aura IA Security con escáner de DNI y botón de pánico" class="rounded-xl shadow-lg w-full h-auto object-cover">
+                    <img src="assets/totempantalla.webp" alt="Pantalla Interactiva de Aura IA Security con escáner de DNI y botón de pánico" class="rounded-xl shadow-lg w-full h-auto object-cover">
                 </div>
                 <div class="md:w-1/2">
                     <h3 class="text-2xl md:text-3xl font-semibold mb-4 text-gray-700">Para Residentes y Administradores: Eficiencia y Tranquilidad</h3>
@@ -260,7 +260,7 @@
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-gray-800">Aura IA Security: La Guardia del Futuro</h2>
             <div class="flex flex-col md:flex-row items-center gap-8 md:gap-10">
                 <div class="md:w-1/2">
-                    <img src="https://raw.githubusercontent.com/santiagogiuggia/Aura-IA-Security/main/assets/logo-aura.png" alt="Ilustración del sistema de seguridad remota con IA de Aura IA Security" class="rounded-xl shadow-lg w-full h-auto object-cover">
+                    <img src="assets/aura-ia-system.png" alt="Ilustración del sistema de seguridad remota con IA de Aura IA Security" class="rounded-xl shadow-lg w-full h-auto object-cover">
                 </div>
                 <div class="md:w-1/2">
                     <h3 class="text-2xl md:text-3xl font-semibold mb-4 text-gray-700">Innovación y Eficiencia en Cada Detalle</h3>
@@ -354,7 +354,7 @@
                     Contáctanos hoy mismo para una consulta personalizada y descubre cómo
                     Aura IA Security puede ofrecerte tranquilidad de primer nivel con un ahorro sin precedentes.
                 </p>
-                <form class="bg-white p-6 md:p-8 rounded-xl shadow-lg text-gray-800">
+                <form id="contactForm" class="bg-white p-6 md:p-8 rounded-xl shadow-lg text-gray-800">
                     <div class="mb-4 md:mb-5">
                         <input type="text" id="name" name="name" placeholder="Tu Nombre" class="w-full p-3 md:p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-200" required>
                     </div>
@@ -384,14 +384,19 @@
     </footer>
 
     <script>
+        // URL base de su backend en Google App Engine
+        // ¡IMPORTANTE! Reemplace esta URL con la URL real de su despliegue en App Engine.
+        const BACKEND_API_BASE_URL = 'https://auraia-463715.rj.r.appspot.com/api'; 
+        // Por ejemplo: 'https://su-proyecto-id.appspot.com/api'
+
         document.addEventListener('DOMContentLoaded', function() {
+            // Lógica para el FAQ (acordeón)
             const faqQuestions = document.querySelectorAll('.faq-question');
             faqQuestions.forEach(question => {
                 question.addEventListener('click', () => {
                     const answer = question.nextElementSibling;
                     const icon = question.querySelector('i');
 
-                    // Cerrar todas las otras respuestas abiertas
                     document.querySelectorAll('.faq-answer.active').forEach(openAnswer => {
                         if (openAnswer !== answer) {
                             openAnswer.classList.remove('active');
@@ -400,18 +405,52 @@
                         }
                     });
 
-                    // Alternar la respuesta actual
                     if (answer.classList.contains('active')) {
                         answer.classList.remove('active');
                         answer.style.maxHeight = null;
                         icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
                     } else {
                         answer.classList.add('active');
-                        answer.style.maxHeight = answer.scrollHeight + "px"; // Ajustar la altura para la animación
+                        answer.style.maxHeight = answer.scrollHeight + "px";
                         icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
                     }
                 });
             });
+
+            // Lógica para el Formulario de Contacto al Backend
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', async function(e) {
+                    e.preventDefault(); // Prevenir el envío por defecto del formulario
+
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const phone = document.getElementById('phone').value;
+                    const message = document.getElementById('message').value;
+
+                    try {
+                        const response = await fetch(`${BACKEND_API_BASE_URL}/contact`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({ name, email, phone, message })
+                        });
+
+                        const data = await response.json();
+
+                        if (response.ok) {
+                            alert('¡Su consulta ha sido enviada con éxito! Le responderemos a la brevedad.');
+                            contactForm.reset(); // Limpiar el formulario
+                        } else {
+                            alert(`Error al enviar la consulta: ${data.message || 'Ocurrió un error inesperado.'}`);
+                        }
+                    } catch (error) {
+                        console.error('Error al enviar el formulario de contacto:', error);
+                        alert('No se pudo enviar su consulta. Por favor, intente de nuevo más tarde o contáctenos directamente.');
+                    }
+                });
+            }
         });
     </script>
 </body>
